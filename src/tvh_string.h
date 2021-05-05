@@ -131,4 +131,16 @@ int put_utf8(char *out, int c);
 char *utf8_lowercase_inplace(char *s);
 char *utf8_validate_inplace(char *s);
 
+/*
+ * Compares string __s1 with string __s2 for equality. 
+ * If they are equal return true
+ * otherwise return flase
+ */
+static inline bool strequal (const char *__s1, const char *__s2)
+    __attribute_pure__ __nonnull ((1, 2))
+{
+    return strcmp(__s1,__s2)==0;
+}
+
+
 #endif /* TVHEADEND_STRING_H */
